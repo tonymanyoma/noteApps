@@ -315,8 +315,6 @@ export default {
               isHoliday: false,
             };
           });
-
-         
         })
         .catch((error) => {
           this.$vs.loading.close();

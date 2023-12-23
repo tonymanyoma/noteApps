@@ -1,28 +1,28 @@
 <template>
   <div>
- 
-
     <b-container class="bv-example-row index_notes_header">
-        <b-row>
-            <b-col>
-                <b-form-input v-model="filter" placeholder="Ingrese texto de filtrado"></b-form-input>
-            </b-col>
-            <b-col class="index_notes_header__button">
-                <b-button variant="primary"  @click="searchNotes" >Buscar</b-button>
-            </b-col>
-        
-        </b-row>
+      <b-row>
+        <b-col>
+          <b-form-input
+            v-model="filter"
+            placeholder="Ingrese texto de filtrado"
+          ></b-form-input>
+        </b-col>
+        <b-col class="index_notes_header__button">
+          <b-button variant="primary" @click="searchNotes">Buscar</b-button>
+        </b-col>
+      </b-row>
     </b-container>
 
-    <b-row  v-if="notes.length == 0">
+    <b-row v-if="notes.length == 0">
       <b-col lg="12">
-        <b-card >
+        <b-card>
           <p>No hay resultados</p>
         </b-card>
       </b-col>
     </b-row>
 
-    <b-row else> 
+    <b-row else>
       <b-col v-for="(note, index) in notes" :key="index" lg="4">
         <b-card :title="note.title" :sub-title="formattedDate(note.date)">
           <p>{{ note.content }}</p>
@@ -45,10 +45,10 @@ export default {
   },
   watch: {
     filter(newValue) {
-      if (newValue === '') {
+      if (newValue === "") {
         this.getNotes();
       }
-    }
+    },
   },
   methods: {
     formattedDate(date) {
