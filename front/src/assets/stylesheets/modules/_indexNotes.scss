@@ -1,0 +1,7 @@
+.index_notes_header{
+    padding: 20px;
+    @include e(button){   
+        text-align: left;
+    }
+
+}
