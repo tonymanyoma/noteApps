@@ -2,6 +2,7 @@
 const Note = require('../Models/Note');
 require('dotenv').config();
 const { Op } = require('sequelize');
+const moment = require('moment-timezone');
 
 module.exports =  class NoteService {
 
@@ -21,7 +22,8 @@ module.exports =  class NoteService {
        //crear nota
    async createNote(data){
         try {
-            
+            // const formattedDate = moment.tz(data.date, data.timezone).format();
+        
             var newNote = {}
             newNote.title = data.title
             newNote.content = data.content

@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Hello from '../components/HelloWorld.vue'
+import IndexCalendar from '../Home/IndexCalendar'
+import IndexNotes from '../Notes/IndexNotes'
 
 Vue.use(VueRouter)
 /*eslint-disable */
@@ -9,7 +10,12 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Hello
+    component: IndexCalendar
+  },
+  {
+    path: '/note_list',
+    name: 'notes',
+    component: IndexNotes
   }
 
 
